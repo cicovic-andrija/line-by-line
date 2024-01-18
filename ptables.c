@@ -1,5 +1,4 @@
 /* ptables.c */
-/* auto-generated */
 
 #include "pdecls.h"
 
