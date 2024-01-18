@@ -5,6 +5,7 @@
 /* Output: string, e.g. "fl" */
 
 #include "pdecls.h"
+#include "testfw.h"
 
 void pr1_str_long_prefix(void)
 {
@@ -13,5 +14,5 @@ void pr1_str_long_prefix(void)
 
 int pr1_str_long_prefix_tests(void)
 {
-    return TR_NOTESTS;
+    NOTEST
 }

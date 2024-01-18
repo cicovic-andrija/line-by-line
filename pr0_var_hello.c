@@ -2,8 +2,8 @@
 /* # Hello World */
 /* Write the string "hello, world" to standard output. */
 
-#include <stdio.h>
 #include "pdecls.h"
+#include "testfw.h"
 
 static void hello_world(void)
 {
@@ -17,5 +17,5 @@ void pr0_var_hello(void)
 
 int pr0_var_hello_tests(void)
 {
-    return TR_NOTESTS;
+    NOTEST
 }

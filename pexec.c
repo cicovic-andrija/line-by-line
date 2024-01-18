@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include "pexec.h"
+#include "testfw.h"
 
 void run(int pr_num)
 {
@@ -19,7 +20,7 @@ void run_tests(int pr_num)
 
     printf("===\nProblem #%d - %s\n", pr_num, pnames[pr_num]);
     results = ptptable[pr_num]();
-    printf("\n\t--- Succeeded: %d\n\t--- Failed: %d\n", DECODE_TR_S(results), DECODE_TR_F(results));
+    printf("\t--- Successful checks: %d\n\t--- Failed checks: %d\n", DECODE_TR_S(results), DECODE_TR_F(results));
 }
 
 void run_tests_for_all(void)

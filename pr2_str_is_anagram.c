@@ -5,8 +5,8 @@
 /* Input: two strings, e.g. "listen", "silent" */
 /* Output: integer, e.g. 1 */
 
-#include <stdlib.h>
 #include "pdecls.h"
+#include "testfw.h"
 
 int is_anagram(const char *s, const char *t)
 {
@@ -40,9 +40,10 @@ void pr2_str_is_anagram(void)
 
 int pr2_str_is_anagram_tests(void)
 {
-    TEST_DRIVER_START
+    TEST_DRIVER_RESET
 
-    TEST_EXPECT_TRUE(is_anagram("anagram", "nagaram"))
+    assert_is_true(is_anagram("anagram", "nagaram"));
+    assert_is_true(is_anagram("abc", "acb"));
 
-    TEST_DRIVER_END
+    TEST_DRIVER_REPORT
 }

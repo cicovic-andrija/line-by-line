@@ -10,6 +10,7 @@ extern int (*ptptable[])(void);
 extern char *pnames[];
 extern char *pcategories[];
 
+/* ref ptables.c for category numbers */
 #define PDESC(M) \
     M(pr0_var_hello, "Hello World", 0) \
     M(pr1_str_long_prefix, "The Longest Common String Prefix", 1) \
