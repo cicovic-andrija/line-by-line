@@ -3,7 +3,7 @@
 
 #include "pdecls.h"
 
-static char * const categories[] = {
+static char *const categories[] = {
     "Various",          /* 0 */
     "Strings",          /* 1 */
 };
@@ -16,10 +16,10 @@ int (*ptptable[])(void) = {
     PDESC(PROB_TFN)
 };
 
-char *const pnames[] = {
+char *pnames[] = {
     PDESC(PROB_NAME)
 };
 
-char *const pcategories[] = {
+char *pcategories[] = {
     PDESC(PROB_CAT)
 };

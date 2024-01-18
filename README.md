@@ -8,9 +8,8 @@
 
 ## 2. Run
 
-2.1. Requires [-> 1. Build](#build)
+2.1. Requires [-> 1. Build](#1-build)
 
 ## 3. Test
 
-3.1. Requirements: [-> 1. Build](#build)
-
+3.1. Requires [-> 1. Build](#1-build)

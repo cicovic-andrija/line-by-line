@@ -8,6 +8,7 @@
 
 void pr1_str_long_prefix(void)
 {
+
 }
 
 int pr1_str_long_prefix_tests(void)
