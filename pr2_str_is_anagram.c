@@ -42,8 +42,10 @@ int pr2_str_is_anagram_tests(void)
 {
     TEST_DRIVER_RESET
 
-    assert_is_true(is_anagram("anagram", "nagaram"));
-    assert_is_true(is_anagram("abc", "acb"));
+    assert_is_true(is_anagram("listen", "silent"));
+    assert_is_false(is_anagram("notan", "anagram"));
+    assert_is_false(is_anagram(NULL, "t"));
+    assert_is_false(is_anagram("s", NULL));
 
     TEST_DRIVER_REPORT
 }

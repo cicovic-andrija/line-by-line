@@ -6,7 +6,7 @@
 
 void run(int pr_num)
 {
-    UNUSED(pr_num);
+    pdptable[pr_num]();
 }
 
 void run_tests(int pr_num)
