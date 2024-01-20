@@ -13,8 +13,8 @@ extern char *pdifficulties[];
 
 #define PDESC(M) \
     M(pr0_var_hello, "Hello World", 0, 0) \
-    M(pr1_str_long_prefix, "The Longest Common String Prefix", 1, 2) \
-    M(pr2_str_is_anagram, "Nag A Ram", 1, 1) \
+    M(pr1_str_long_prefix, "Longest Common String Prefix", 1, 0) \
+    M(pr2_str_is_anagram, "Nag A Ram", 1, 0) \
 
 typedef enum problem {
     PDESC(PROB_ENUM)
