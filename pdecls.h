@@ -9,12 +9,12 @@ extern void (*pdptable[])(void);
 extern int (*ptptable[])(void);
 extern char *pnames[];
 extern char *pcategories[];
+extern char *pdifficulties[];
 
-/* ref ptables.c for category numbers */
 #define PDESC(M) \
-    M(pr0_var_hello, "Hello World", 0) \
-    M(pr1_str_long_prefix, "The Longest Common String Prefix", 1) \
-    M(pr2_str_is_anagram, "Nag A Ram", 1) \
+    M(pr0_var_hello, "Hello World", 0, 0) \
+    M(pr1_str_long_prefix, "The Longest Common String Prefix", 1, 2) \
+    M(pr2_str_is_anagram, "Nag A Ram", 1, 1) \
 
 typedef enum problem {
     PDESC(PROB_ENUM)

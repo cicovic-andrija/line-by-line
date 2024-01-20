@@ -49,17 +49,18 @@ void help(void)
 void list(void)
 {
     int i;
-    const char *fmt_header = "%-3s  %-12s  %s\n";
-    const char *fmt_row = "%-3d  %-12s  %s\n";
+    const char *fmt_header = "%-3s  %-12s  %-12s  %s\n";
+    const char *fmt_row = "%-3d  %-12s  %-12s  %s\n";
 
-    printf(fmt_header, "N", "CATEGORY", "NAME");
-    printf(fmt_header, "===", "============", "============");
+    printf(fmt_header, "N", "CATEGORY", "DIFFICULTY", "NAME");
+    printf(fmt_header, "===", "============", "============", "============");
     for (i = 0; i < PROB_COUNT; ++i) {
-        printf(fmt_row, i, pcategories[i], pnames[i]);
+        printf(fmt_row, i, pcategories[i], pdifficulties[i], pnames[i]);
     }
 }
 
 void describe(int pr_num)
 {
-    printf("===\nProblem #%d\n\n%s\n\nTODO\n", pr_num, pnames[pr_num]);
+    printf("===\nProblem #%d | Category: %s | Difficulty: %s\n\n%s\n\nTODO\n",
+        pr_num, pcategories[pr_num], pdifficulties[pr_num], pnames[pr_num]);
 }

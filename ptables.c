@@ -7,6 +7,13 @@ static char *const categories[] = {
     "Strings",          /* 1 */
 };
 
+static char *const difficulties[] = {
+    "Beginner",         /* 0 */
+    "Intermediate",     /* 1 */
+    "Advanced",         /* 2 */
+    "Expert",           /* 3 */
+};
+
 void (*pdptable[])(void) = {
     PDESC(PROB_DFN)
 };
@@ -21,4 +28,8 @@ char *pnames[] = {
 
 char *pcategories[] = {
     PDESC(PROB_CAT)
+};
+
+char *pdifficulties[] = {
+    PDESC(PROB_DIF)
 };
