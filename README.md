@@ -8,14 +8,20 @@
 
 ## 2. Run
 
-2.1. Requires [-> 1. Build](#1-build)
+2.1. Requires [-> 1. Build](#1-build).
+
 2.2. List all available problems by running `lbl` or `lbl list`.
+
 2.3. Execute the solution for a problem by running `lbl run N`, where `N` is the problem number.
+
 2.4. Run `lbl help` for additional options.
 
 ## 3. Test
 
-3.1. Requires [-> 1. Build](#1-build)
+3.1. Requires [-> 1. Build](#1-build).
+
 3.2. List all available problems by running `lbl` or `lbl list`.
+
 3.3. Run all tests for a problem by running `lbl test N`, where `N` is the problem number.
+
 3.4. Run all tests for all problems by running `lbl test`.
