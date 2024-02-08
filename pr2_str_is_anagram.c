@@ -1,14 +1,15 @@
 /* pr2_str_is_anagram.c */
 /* # Nag A Ram */
-/* Given two strings s and t, return 1 if t is an anagram of s. Otherwise, return 0. */
-/* Assume only lowercase letters a-z are present in input strings. */
-/* Input: two strings, e.g. "listen", "silent" */
-/* Output: integer, e.g. 1 */
+/* Given two strings s and t, determine whether t is an anagram of s. */
+/* Assume only lowercase letters a-z and spaces are present in input strings. Spaces should be ignored. */
+/* Input: strings s and t, e.g. "tom marvolo riddle", "i am lord voldemort" */
+/* Output: 1 if t is an anagram of s, 0 otherwise */
 
+#include <ctype.h>
 #include "pdecls.h"
 #include "testfw.h"
 
-int is_anagram(const char *s, const char *t)
+static int is_anagram(const char *s, const char *t)
 {
     int letters[26] = { 0 };
     int i = 0;
@@ -18,13 +19,13 @@ int is_anagram(const char *s, const char *t)
 
     c = s;
     while (*c) {
-        letters[*c - 'a']++;
+        if (islower(*c)) letters[*c - 'a']++;
         c++;
     }
 
     c = t;
     while (*c) {
-        letters[*c - 'a']--;
+        if (islower(*c)) letters[*c - 'a']--;
         c++;
     }
 
@@ -43,6 +44,7 @@ int pr2_str_is_anagram_tests(void)
     TEST_DRIVER_RESET
 
     assert_is_true(is_anagram("listen", "silent"));
+    assert_is_true(is_anagram("tom marvolo riddle", "i am lord voldemort"));
     assert_is_false(is_anagram("notan", "anagram"));
     assert_is_false(is_anagram(NULL, "t"));
     assert_is_false(is_anagram("s", NULL));

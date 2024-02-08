@@ -10,7 +10,7 @@
 #include "pdecls.h"
 #include "testfw.h"
 
-char *longest_common_prefix(const char **input, int n)
+static char *longest_common_prefix(const char **input, int n)
 {
     char *prefix, *p;
     int chi = 0;
@@ -19,7 +19,10 @@ char *longest_common_prefix(const char **input, int n)
     if (input == NULL || n < 1) return NULL;
     if (!input[0]) return "";
 
-    p = prefix = (char *)malloc((strlen(input[0]) + 1) * sizeof(char));
+    if ((p = prefix = (char *)malloc((strlen(input[0]) + 1))) == NULL) {
+        return NULL;
+    }
+
     do {
         int i;
         char ch = input[0][chi];

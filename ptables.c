@@ -5,6 +5,7 @@
 static char *const categories[] = {
     "Various",          /* 0 */
     "Strings",          /* 1 */
+    "Math",             /* 2 */
 };
 
 static char *const difficulties[] = {
