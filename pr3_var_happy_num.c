@@ -11,6 +11,7 @@
 
 int is_happy(int k)
 {
+    UNUSED(k);
     return 0;
 }
 
