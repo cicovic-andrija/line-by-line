@@ -2,7 +2,6 @@
 /* # Try Out Input Methods */
 /* Implement a playground for trying out various input methods. */
 
-#include <stdlib.h>
 #include "testfw.h"
 #include "input.h"
 
@@ -27,5 +26,5 @@ void pr1_input_methods(void)
 
 int pr1_input_methods_tests(void)
 {
-    NOTEST
+    NO_TESTS
 }

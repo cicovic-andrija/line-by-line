@@ -17,5 +17,5 @@ void pr0_hello_world(void)
 
 int pr0_hello_world_tests(void)
 {
-    NOTEST
+    NO_TESTS
 }

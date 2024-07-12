@@ -9,7 +9,7 @@
 #include "pdecls.h"
 #include "testfw.h"
 
-int is_happy(int k)
+static int is_happy(int k)
 {
     if (k < 1) {
         return 0;

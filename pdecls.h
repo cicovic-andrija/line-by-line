@@ -25,6 +25,7 @@ extern char *pdifficulties[];
     M(pr10_longest_prefix, "Longest Common String Prefix", 1, 0) \
     M(pr11_str_is_anagram, "Nag A Ram", 1, 0) \
     M(pr12_happy_num, "Happy Who?", 2, 0) \
+    M(pr13_roman_numerals, "Decipher Roman Numerals", 2, 0) \
 
 typedef enum problem {
     PDESC(PROB_ENUM)

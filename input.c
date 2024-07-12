@@ -1,6 +1,5 @@
 /* input.c */
 
-#include <stdlib.h>
 #include <stdio.h>
 #include "input.h"
 

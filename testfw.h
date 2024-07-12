@@ -8,7 +8,7 @@
 extern int g_tr_s_;
 extern int g_tr_f_;
 
-#define NOTEST return 0;
+#define NO_TESTS return 0;
 #define ENCODE_TR(s, f) ((s & 0x0f) << 4 | f)
 #define DECODE_TR_S(e) (e >> 4 & 0x0f)
 #define DECODE_TR_F(e) (e & 0x0f)
