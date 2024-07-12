@@ -1,4 +1,4 @@
-/* pr0_var_hello.c */
+/* pr0_hello_world.c */
 /* # Hello World */
 /* Write the string "hello, world" to standard output. */
 
@@ -10,12 +10,12 @@ static void hello_world(void)
     printf("hello, world\n");
 }
 
-void pr0_var_hello(void)
+void pr0_hello_world(void)
 {
     hello_world();
 }
 
-int pr0_var_hello_tests(void)
+int pr0_hello_world_tests(void)
 {
     NOTEST
 }

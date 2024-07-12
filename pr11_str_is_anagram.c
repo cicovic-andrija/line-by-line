@@ -1,4 +1,4 @@
-/* pr2_str_is_anagram.c */
+/* pr11_str_is_anagram.c */
 /* # Nag A Ram */
 /* Given two strings s and t, determine whether t is an anagram of s. */
 /* Assume only lowercase letters a-z and spaces are present in input strings. Spaces should be ignored. */
@@ -34,12 +34,12 @@ static int is_anagram(const char *s, const char *t)
     return 1;
 }
 
-void pr2_str_is_anagram(void)
+void pr11_str_is_anagram(void)
 {
 
 }
 
-int pr2_str_is_anagram_tests(void)
+int pr11_str_is_anagram_tests(void)
 {
     TEST_DRIVER_RESET
 

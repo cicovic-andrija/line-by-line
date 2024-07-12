@@ -20,7 +20,13 @@ void run_tests(int pr_num)
 
     printf("===\nProblem #%d - %s\n", pr_num, pnames[pr_num]);
     results = ptptable[pr_num]();
-    printf("\t--- Successful checks: %d\n\t--- Failed checks: %d\n", DECODE_TR_S(results), DECODE_TR_F(results));
+    if (results != 0) {
+        printf("\t--- Successful checks: %d\n\t--- Failed checks: %d\n", DECODE_TR_S(results), DECODE_TR_F(results));
+        printf("\t>>> %s\033[0m\n", DECODE_TR_F(results) > 0 ? "\033[31;1mFAIL!" : "\033[32;1mSUCCESS");
+    } else {
+        printf("\t>>> \033[36;1mNO TESTS FOUND\033[0m\n");
+    }
+
 }
 
 void run_tests_for_all(void)
@@ -61,6 +67,6 @@ void list(void)
 
 void describe(int pr_num)
 {
-    printf("===\nProblem #%d | Category: %s | Difficulty: %s\n\n%s\n\nTODO\n",
+    printf("===\nProblem #%d | Category: %s | Difficulty: %s\n\n%s\n\nproblem description (TODO)\n",
         pr_num, pcategories[pr_num], pdifficulties[pr_num], pnames[pr_num]);
 }

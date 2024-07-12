@@ -18,7 +18,7 @@ extern int g_tr_f_;
 #define ASSERT_FN_DECL(name, ...) void testfw_##name(__VA_ARGS__, const char *file, int line);
 #define ASSERT_FN(name, fail_cond, ...) void testfw_##name(__VA_ARGS__, const char *file, int line) { \
     if (fail_cond) { \
-        printf("\tFAIL: %s failed on %s:%d\n", #name, file, line); \
+        printf("\t\033[31;1mFAIL:\033[0m %s failed on %s:%d\n", #name, file, line); \
         ++g_tr_f_; \
     } else { \
         ++g_tr_s_; \

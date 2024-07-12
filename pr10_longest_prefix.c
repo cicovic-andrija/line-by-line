@@ -1,5 +1,5 @@
-/* pr1_str_long_prefix.c */
-/* # The Longest Common String Prefix */
+/* pr10_longest_prefix.c */
+/* # Longest Common String Prefix */
 /* Find the longest common prefix string for the strings present in the input array. */
 /* Treat NULL elements of the input array as empty strings.*/
 /* Input: array of strings, e.g. ["flower", "flow", "flight"] */
@@ -42,12 +42,12 @@ static char *longest_common_prefix(const char **input, int n)
     return prefix;
 }
 
-void pr1_str_long_prefix(void)
+void pr10_longest_prefix(void)
 {
 
 }
 
-int pr1_str_long_prefix_tests(void)
+int pr10_longest_prefix_tests(void)
 {
     const char *input_1[] = { "flower", "flow", "flight" };
     char *output_1 = longest_common_prefix(input_1, 3);
