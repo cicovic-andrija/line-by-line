@@ -9,9 +9,9 @@ extern int g_tr_s_;
 extern int g_tr_f_;
 
 #define NO_TESTS return 0;
-#define ENCODE_TR(s, f) ((s & 0x0f) << 4 | f)
-#define DECODE_TR_S(e) (e >> 4 & 0x0f)
-#define DECODE_TR_F(e) (e & 0x0f)
+#define ENCODE_TR(s, f) ((s & 0x00ff) << 8 | f)
+#define DECODE_TR_S(e) (e >> 8 & 0x00ff)
+#define DECODE_TR_F(e) (e & 0x00ff)
 #define TEST_DRIVER_RESET g_tr_s_ = 0; g_tr_f_ = 0;
 #define TEST_DRIVER_REPORT return ENCODE_TR(g_tr_s_, g_tr_f_);
 
@@ -33,5 +33,8 @@ ASSERT_FN_DECL(assert_is_false, int b)
 
 ASSERT_FN_DECL(assert_streq, const char *s1, const char *s2)
 #define assert_streq(s1, s2) testfw_assert_streq((s1), (s2), __FILE__, __LINE__)
+
+ASSERT_FN_DECL(assert_inteq, const int i1, const int i2)
+#define assert_inteq(i1, i2) testfw_assert_inteq((i1), (i2), __FILE__, __LINE__)
 
 #endif /* LBL_TESTFW_H */
