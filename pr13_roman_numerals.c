@@ -21,8 +21,9 @@
 /* Output: int, e.g. 1996 */
 /* Output in case of invalid input: -1 */
 
-#include "testfw.h"
+#include "pdecls.h"
 #include "input.h"
+#include "testfw.h"
 
 #define ERR_INVALID -1
 
@@ -89,7 +90,12 @@ void pr13_roman_numerals(void)
     printf("Keep entering roman numerals (enter EOF/interrupt to exit):\n");
     while (getline(&input, 128))
     {
-        printf("%s >>> %d\n", input, decipher_roman(input));
+        int res = decipher_roman(input);
+        if (res != ERR_INVALID) {
+            printf("%s = %d\n", input, decipher_roman(input));
+        } else {
+            printf("%s is not a valid roman numeral.\n", input);
+        }
     }
 }
 

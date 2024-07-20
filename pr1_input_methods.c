@@ -2,7 +2,9 @@
 /* # Try Out Input Methods */
 /* Implement a playground for trying out various input methods. */
 
+#include "pdecls.h"
 #include "testfw.h"
+#include "util.h"
 #include "input.h"
 
 void pr1_input_methods(void)

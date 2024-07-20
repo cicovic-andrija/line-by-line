@@ -37,6 +37,13 @@ void run_tests_for_all(void)
     }
 }
 
+void run_internal_tests(void)
+{
+    void dt_run_tests(void);
+
+    dt_run_tests();
+}
+
 void help(void)
 {
     printf(

@@ -12,6 +12,7 @@ typedef enum action {
     A_DESC,
     A_RUN,
     A_TEST,
+    A_TEST_INTERNAL,
     A_HELP,
     A_INVALID
 }
@@ -41,6 +42,10 @@ void str_scan_action(const char *str, e_action *action)
     else if (!strcmp(str, "test"))
     {
         *action = A_TEST;
+    }
+    else if (!strcmp(str, "__run_internal_tests"))
+    {
+        *action = A_TEST_INTERNAL;
     }
     else if (!strcmp(str, "help"))
     {
@@ -123,6 +128,9 @@ int main(int argc, char *argv[])
             break;
         case A_TEST:
             run_tests(req.pr_num);
+            break;
+        case A_TEST_INTERNAL:
+            run_internal_tests();
             break;
         case A_HELP:
             help();

@@ -5,9 +5,9 @@
 /* Input: array of strings, e.g. ["flower", "flow", "flight"] */
 /* Output: string, e.g. "fl" */
 
-#include <stdlib.h>
 #include <string.h>
 #include "pdecls.h"
+#include "util.h"
 #include "testfw.h"
 
 static char *longest_common_prefix(const char **input, int n)
@@ -19,10 +19,7 @@ static char *longest_common_prefix(const char **input, int n)
     if (input == NULL || n < 1) return NULL;
     if (!input[0]) return "";
 
-    if ((p = prefix = (char *)malloc((strlen(input[0]) + 1))) == NULL) {
-        return NULL;
-    }
-
+    p = prefix = (char *)must_alloc(strlen(input[0]) + 1);
     do {
         int i;
         char ch = input[0][chi];
@@ -61,17 +58,22 @@ int pr10_longest_prefix_tests(void)
     const char *input_4[] = { "flower", "flow", "" };
     char *output_4 = longest_common_prefix(input_4, 3);
 
+    const char *input_5[] = { "", "a", "aa", "aaa" };
+    char *output_5 = longest_common_prefix(input_5, 4);
+
     TEST_DRIVER_RESET
 
     assert_streq("fl", output_1);
     assert_streq("flow", output_2);
     assert_streq("", output_3);
     assert_streq("", output_4);
+    assert_streq("", output_5);
 
     free(output_1);
     free(output_2);
     free(output_3);
     free(output_4);
+    free(output_5);
 
     TEST_DRIVER_REPORT
 }

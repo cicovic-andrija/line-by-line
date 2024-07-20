@@ -11,5 +11,6 @@ void describe(int);
 void run(int);
 void run_tests(int);
 void run_tests_for_all(void);
+void run_internal_tests(void);
 
 #endif /* LBL_PEXEC_H */
