@@ -14,5 +14,8 @@ enum {
 };
 
 void *must_alloc(size_t size);
+int *must_alloc_int(int val);
+void *get_key_scalar_type(void *data);
+int int_keycmp(void *key_1, void *key_2);
 
 #endif /* LBL_UTIL_H */

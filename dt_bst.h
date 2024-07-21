@@ -3,19 +3,19 @@
 
 /* dt_bst.h */
 
-typedef struct _bst_node {
+typedef struct bst_node {
     void *data;
-    struct _bst_node *left;
-    struct _bst_node *right;
+    struct bst_node *left;
+    struct bst_node *right;
 }
-bst_node;
+t_bst_node;
 
-typedef struct _bst {
-    bst_node *root;
+typedef struct bst {
+    t_bst_node *root;
     void *(*get_key)(void *data);
     int (*keycmp)(void *key_1, void *key_2);
 }
-bst;
+t_bst;
 
 typedef enum visit_type {
     VISIT_PREORDER,
@@ -24,11 +24,15 @@ typedef enum visit_type {
 }
 e_visit_type;
 
-bst bst_mint(void);
-void *bst_search(bst *tree, void *key);
-void bst_visit(bst *tree, void (*pfn)(void *), e_visit_type vt);
-int bst_insert(bst *tree, void *new_data);
-int bst_remove(bst *tree, void *key);
-void bst_free(bst *tree);
+t_bst bst_mint(void *(get_key_fn)(void *), int (*keycmp_fn)(void *, void *));
+void *bst_search(t_bst *tree, void *key);
+void bst_visit(t_bst *tree, void (*pfn)(void *), e_visit_type vt);
+int bst_insert(t_bst *tree, void *new_data);
+void *bst_remove(t_bst *tree, void *key);
+void bst_free(t_bst *tree);
+
+int dbg_bst_insert(t_bst *tree, void *new_data, void (*repr)(void *));
+void *dbg_bst_remove(t_bst *tree, void *key, void (*repr)(void *));
+void dbg_bst_print(t_bst *tree, void (*repr)(void *));
 
 #endif /* LBL_DT_BST_H */

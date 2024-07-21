@@ -6,7 +6,7 @@
 #include "dt_bst.h"
 
 typedef struct _intset {
-    bst tree;
+    t_bst tree;
 }
 intset;
 
