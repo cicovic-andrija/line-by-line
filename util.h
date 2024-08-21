@@ -4,8 +4,10 @@
 /* util.h */
 
 #include <stdlib.h>
+#include "dt_intpair.h"
 #include "dt_bst.h"
 #include "dt_intset.h"
+#include "dt_iimap.h"
 
 extern int g_dterr;
 enum {

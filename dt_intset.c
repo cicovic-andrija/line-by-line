@@ -20,13 +20,14 @@ int intset_insert(intset *set, int i)
     if (set) {
         int *data = (int *)must_alloc(sizeof(int));
         *data = i;
-        return bst_insert(&set->tree, data) || g_dterr == 0;
+        return bst_insert(&set->tree, data, 0 /* update_existing */) || g_dterr == 0;
     }
     return 0;
 }
 
 int intset_remove(intset *set, int i)
 {
+    /* TODO: Memory leak? No free. */
     return set ? (bst_remove(&set->tree, &i) ? 1 : 0 ) : 0;
 }
 

@@ -27,7 +27,7 @@ e_visit_type;
 t_bst bst_mint(void *(get_key_fn)(void *), int (*keycmp_fn)(void *, void *));
 void *bst_search(t_bst *tree, void *key);
 void bst_visit(t_bst *tree, void (*pfn)(void *), e_visit_type vt);
-int bst_insert(t_bst *tree, void *new_data);
+int bst_insert(t_bst *tree, void *new_data, int update_existing);
 void *bst_remove(t_bst *tree, void *key);
 void bst_free(t_bst *tree);
 

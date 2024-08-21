@@ -97,7 +97,7 @@ void bst_visit(t_bst *tree, void (*pfn)(void *), e_visit_type vt)
     }
 }
 
-int bst_insert(t_bst *tree, void *new_data)
+int bst_insert(t_bst *tree, void *new_data, int update_existing)
 {
     t_bst_node *new;
     t_bst_node *p, *q;
@@ -119,7 +119,12 @@ int bst_insert(t_bst *tree, void *new_data)
         int cmpres;
         q = p;
         if ((cmpres = tree->keycmp(key, tree->get_key(p->data))) == 0) {
-            return 0; /* key already exists */
+            if (!update_existing) {
+                return 0; /* key already exists */
+            }
+            p->data = new_data;
+            free(new); /* TODO: Handle this outside of bst implementation. */
+            return 1;
         } else if (cmpres < 0) {
             p = p->left;
         } else {
@@ -229,7 +234,7 @@ int dbg_bst_insert(t_bst *tree, void *new_data, void (*repr)(void *))
 {
     int inserted;
     printf("bst_insert("); repr(new_data);
-    printf("): %s", (inserted = bst_insert(tree, new_data)) ? "succeeded" : "failed");
+    printf("): %s", (inserted = bst_insert(tree, new_data, 0)) ? "succeeded" : "failed");
     printf(", g_dterr = %d\n> bst = ", g_dterr);
     dbg_bst_print(tree, repr);
     putchar('\n');

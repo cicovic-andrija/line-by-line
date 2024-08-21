@@ -11,7 +11,40 @@
 /* O(N) */
 static int subarrays_of_sum_k_linear(int nums[], int n, int K)
 {
+    int count = 0;
+    int *prefix_sums;
+    t_iimap prefix_sum_counts = iimap_mint();
+    int i;
 
+    if (nums == NULL || n < 1) return 0;
+
+    prefix_sums = (int *)must_alloc(n*sizeof(int));
+
+    prefix_sums[0] = nums[0];
+    for (i = 1; i < n; ++i) {
+        prefix_sums[i] = prefix_sums[i-1] + nums[i];
+    }
+
+    for (i = 0; i < n; ++i) {
+        int diff = prefix_sums[i] - K;
+        intkv *sum_count_pair = iimap_search(&prefix_sum_counts, diff);
+        if (sum_count_pair) {
+            count += sum_count_pair->val;
+        }
+        sum_count_pair = iimap_search(&prefix_sum_counts, prefix_sums[i]);
+        if (sum_count_pair) {
+            sum_count_pair->val = sum_count_pair->val + 1;
+        } else {
+            intkv sum_count_pair_1;
+            sum_count_pair_1.key = prefix_sums[i];
+            sum_count_pair_1.val = 1;
+            iimap_insert(&prefix_sum_counts, sum_count_pair_1);
+        }
+    }
+
+    iimap_free(&prefix_sum_counts);
+    free(prefix_sums);
+    return count;
 }
 
 /* O(N^2) */
@@ -57,7 +90,7 @@ int pr14_summed_subarrays_tests(void)
     int nums_4[] = { 3, 4, 7, 2, -3, 1, 4, 2, 1 };
     int K_4 = 7;
 
-    int (*fp[])(int[], int, int) = { subarrays_of_sum_k_naive/*, subarrays_of_sum_k_linear*/ };
+    int (*fp[])(int[], int, int) = { subarrays_of_sum_k_naive, subarrays_of_sum_k_linear };
 
     /* unsigned long to prevent warning "comparison of integer expressions of different signedness". */
     unsigned long i;
