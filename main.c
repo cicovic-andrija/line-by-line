@@ -43,7 +43,7 @@ void str_scan_action(const char *str, e_action *action)
     {
         *action = A_TEST;
     }
-    else if (!strcmp(str, "__run_internal_tests"))
+    else if (!strcmp(str, "__test"))
     {
         *action = A_TEST_INTERNAL;
     }
